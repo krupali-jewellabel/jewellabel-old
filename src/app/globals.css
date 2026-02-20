@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --dark: red;
+  --nav-outline: #d8d7d7;
+  --white-smoke: #fcfcfc;
+  --transparent: #0000;
+  --black: #181818;
+  --main-font: Archivo, sans-serif;
+  --grey: #7a7a7a;
+  --orange: #f55733;
+  --lighter-grey: #a0a0a0;
+  --yellow: #f5c433;
+  --white-grey: #cfcfcf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Archivo', sans-serif;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+.stroke-text {
+  -webkit-text-stroke: 1px rgba(39, 39, 39, 0.3);
+  /* text-stroke: 2px #ccc; */
+}
+
+/* ------Testiminial--------- */
+
+/* Desktop Column Animations */
+.column-0 .column-content {
+  animation: slideDown 10s linear infinite;
+}
+.column-1 .column-content {
+  animation: slideUp 10s linear infinite;
+}
+.column-2 .column-content {
+  animation: slideDown 10s linear infinite;
+}
+
+/* Mobile Slide Animation */
+@media (max-width: 1023px) {
+  .slide-up-mobile {
+    animation: slideUpMobile 30s linear infinite;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpMobile {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 20s linear infinite;
+}
+
+.w-embed::before,
+.w-embed::after {
+  content: " ";
+  display: table;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.w-embed::after {
+  clear: both;
+}
